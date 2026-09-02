@@ -1,0 +1,228 @@
+<html>
+<head>
+<style>
+body {
+    background-color: #FFF0F5;
+    font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.reg-box {
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 4px 4px 20px rgba(216, 27, 96, 0.2);
+    padding: 35px 45px;
+    width: 420px;
+}
+
+.reg-icon {
+    width: 65px;
+    height: 65px;
+    background-color: #D81B60;
+    border-radius: 50%;
+    margin: 0 auto 12px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: white;
+}
+
+h1 {
+    color: #D81B60;
+    font-size: 22px;
+    margin: 0 0 5px 0;
+    text-align: center;
+}
+
+.tagline {
+    color: #999;
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: 28px;
+    font-style: italic;
+}
+
+.input-group {
+    margin-bottom: 16px;
+}
+
+label {
+    font-size: 12px;
+    color: #D81B60;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"], input[type="password"], select, textarea {
+    width: 100%;
+    padding: 9px 12px;
+    border: 1.5px solid #FFD1DC;
+    border-radius: 8px;
+    font-size: 13px;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Georgia', serif;
+    transition: border-color 0.2s;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, select:focus, textarea:focus {
+    border-color: #D81B60;
+}
+
+.dob-row {
+    display: flex;
+    gap: 8px;
+}
+
+.options-row {
+    font-size: 13px;
+    color: #555;
+}
+
+.options-row label {
+    display: inline;
+    color: #555;
+    font-weight: normal;
+    margin-right: 15px;
+}
+
+.reg-btn {
+    width: 100%;
+    background-color: #D81B60;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 8px;
+    margin-bottom: 12px;
+    transition: background-color 0.2s;
+}
+
+.reg-btn:hover {
+    background-color: #B0184F;
+}
+
+.clear-btn {
+    width: 100%;
+    background-color: white;
+    color: #D81B60;
+    border: 1.5px solid #FFD1DC;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-link {
+    font-size: 13px;
+    color: #777;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.login-link a {
+    color: #D81B60;
+    font-weight: bold;
+    text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="reg-box">
+
+    <div class="reg-icon">&#128214;</div>
+
+    <h1>Join Our Bookstore</h1>
+    <p class="tagline">Create an account and start your reading journey</p>
+
+    <form name="regForm" action="">
+
+        <div class="input-group">
+            <label>Full Name</label>
+            <input type="text" name="name">
+        </div>
+
+        <div class="input-group">
+            <label>Password</label>
+            <input type="password" name="password">
+        </div>
+
+        <div class="input-group">
+            <label>Email ID</label>
+            <input type="text" name="email">
+        </div>
+
+        <div class="input-group">
+            <label>Phone Number</label>
+            <input type="text" name="phone">
+        </div>
+
+        <div class="input-group">
+            <label>Gender</label>
+            <div class="options-row">
+                <label><input type="radio" name="sex"> Male</label>
+                <label><input type="radio" name="sex"> Female</label>
+                <label><input type="radio" name="sex"> Other</label>
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label>Date of Birth</label>
+            <div class="dob-row">
+                <select name="day">
+                    <option>01</option>
+                    <option>02</option>
+                    <option>...</option>
+                    <option>31</option>
+                </select>
+                <select name="month">
+                    <option>January</option>
+                    <option>February</option>
+                    <option>...</option>
+                    <option>December</option>
+                </select>
+                <select name="year">
+                    <option>2005</option>
+                    <option>2006</option>
+                    <option>...</option>
+                    <option>2010</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label>Languages Known</label>
+            <div class="options-row">
+                <label><input type="checkbox" name="lang"> English</label>
+                <label><input type="checkbox" name="lang"> Hindi</label>
+                <label><input type="checkbox" name="lang"> Tamil</label>
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label>Address</label>
+            <textarea name="address" rows="3"></textarea>
+        </div>
+
+        <input type="submit" class="reg-btn" value="Create Account">
+        <input type="reset" class="clear-btn" value="Clear Form">
+
+    </form>
+
+    <p class="login-link">Already have an account? <a href="login.html" target="mainFrame">Login here</a></p>
+
+</div>
+
+</body>
+</html>
