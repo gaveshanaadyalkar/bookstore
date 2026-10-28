@@ -1,0 +1,1356 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Student Voice | GL Bajaj</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #111111;
+    --white: #ffffff;
+    --gray: #777777;
+    --light: #f5f5f5;
+    --border: #dedede;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ededed;
+    color: var(--black);
+    line-height: 1.6;
+}
+
+.container {
+    width: 92%;
+    max-width: 1100px;
+    margin: 35px auto;
+}
+
+/* TOP NAVIGATION */
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3px 20px;
+}
+
+.brand {
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.brand span {
+    display: block;
+    color: var(--gray);
+    font-size: 10px;
+    letter-spacing: 1px;
+    margin-top: 2px;
+}
+
+.badge {
+    border: 1px solid #bcbcbc;
+    border-radius: 30px;
+    padding: 7px 15px;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* HERO */
+
+.hero {
+    background: var(--black);
+    color: var(--white);
+    border-radius: 14px;
+    padding: 48px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.hero::after {
+    content: "01";
+    position: absolute;
+    right: 25px;
+    bottom: -55px;
+    font-size: 190px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.045);
+}
+
+.eyebrow {
+    color: #bcbcbc;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 17px;
+}
+
+.hero h1 {
+    font-size: clamp(34px, 6vw, 62px);
+    line-height: 1.05;
+    letter-spacing: -2px;
+    max-width: 700px;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #a8a8a8;
+}
+
+.hero-description {
+    max-width: 570px;
+    color: #d1d1d1;
+    font-size: 15px;
+    margin-bottom: 28px;
+}
+
+.hero-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    border-top: 1px solid #414141;
+    padding-top: 20px;
+}
+
+.hero-tags {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: #e0e0e0;
+}
+
+.hero-number {
+    font-size: 12px;
+    color: #bdbdbd;
+}
+
+/* PROGRESS */
+
+.progress-card {
+    background: white;
+    padding: 20px 25px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 25px;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.progress-track {
+    height: 6px;
+    background: #e8e8e8;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: #111111;
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
+
+/* SECTIONS */
+
+.section {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+    margin-bottom: 20px;
+    transition: border-color 0.2s;
+}
+
+.section:hover {
+    border-color: #999999;
+}
+
+.section-heading {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.section-number {
+    background: #111111;
+    color: white;
+    min-width: 42px;
+    height: 42px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.section-heading h2 {
+    font-size: 21px;
+    line-height: 1.3;
+}
+
+.section-heading p {
+    color: var(--gray);
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+/* FORM ELEMENTS */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.field label,
+.question {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+input[type="text"],
+select,
+textarea {
+    width: 100%;
+    border: 1px solid #d6d6d6;
+    border-radius: 7px;
+    padding: 13px;
+    font-family: inherit;
+    font-size: 13px;
+    background: white;
+    color: #111111;
+    transition: border-color 0.2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #111111;
+}
+
+/* QUESTION GROUPS */
+
+.question-block {
+    margin-bottom: 27px;
+}
+
+.question-block:last-child {
+    margin-bottom: 0;
+}
+
+.question {
+    margin-bottom: 13px;
+}
+
+.question-subtitle {
+    font-size: 12px;
+    color: var(--gray);
+    margin-top: -7px;
+    margin-bottom: 13px;
+}
+
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* SELECTABLE CARDS */
+
+.choice-card {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #dddddd;
+    border-radius: 7px;
+    padding: 11px 14px;
+    cursor: pointer;
+    font-size: 12px;
+    background: white;
+    transition: all 0.2s;
+}
+
+.choice-card:hover {
+    border-color: #777777;
+    background: #f7f7f7;
+}
+
+.choice-card:has(input:checked) {
+    background: #111111;
+    color: white;
+    border-color: #111111;
+}
+
+.choice-card input {
+    accent-color: #111111;
+}
+
+.choice-card:has(input:checked) input {
+    accent-color: white;
+}
+
+/* TECHNOLOGY CARDS */
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.tech-card {
+    position: relative;
+    cursor: pointer;
+}
+
+.tech-card input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.tech-content {
+    border: 1px solid #dddddd;
+    padding: 20px 12px;
+    border-radius: 9px;
+    text-align: center;
+    height: 100%;
+    transition: all 0.2s;
+}
+
+.tech-symbol {
+    display: block;
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.tech-content strong {
+    display: block;
+    font-size: 12px;
+}
+
+.tech-content small {
+    display: block;
+    color: #777777;
+    font-size: 10px;
+    margin-top: 5px;
+}
+
+.tech-card:hover .tech-content {
+    border-color: #777777;
+    transform: translateY(-3px);
+}
+
+.tech-card input:checked + .tech-content {
+    background: #111111;
+    color: white;
+    border-color: #111111;
+}
+
+.tech-card input:checked + .tech-content small {
+    color: #cccccc;
+}
+
+.tech-card input:focus-visible + .tech-content {
+    outline: 2px solid #555555;
+    outline-offset: 3px;
+}
+
+/* TEXTAREA */
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* SUBMISSION */
+
+.submit-panel {
+    background: #111111;
+    color: white;
+    padding: 35px;
+    text-align: center;
+    border-radius: 12px;
+    margin: 25px 0;
+}
+
+.submit-panel h2 {
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+.submit-panel p {
+    font-size: 13px;
+    color: #cccccc;
+    margin-bottom: 22px;
+}
+
+.submit-button {
+    display: inline-block;
+    background: white;
+    color: #111111;
+    border: none;
+    border-radius: 7px;
+    padding: 14px 48px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.submit-button:hover {
+    background: #dddddd;
+    transform: translateY(-2px);
+}
+
+/* FOOTER */
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 24px 5px;
+    border-top: 1px solid #c8c8c8;
+}
+
+.footer h3 {
+    font-size: 13px;
+}
+
+.footer p {
+    color: #666666;
+    font-size: 11px;
+    margin-top: 4px;
+}
+
+.footer-right {
+    text-align: right;
+    font-size: 11px;
+    color: #666666;
+}
+
+/* SUCCESS MESSAGE */
+
+.success {
+    display: none;
+    background: #eeeeee;
+    border: 1px solid #bbbbbb;
+    border-radius: 9px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.success h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.success p {
+    font-size: 13px;
+    color: #555555;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+
+    .container {
+        width: 94%;
+        margin: 18px auto;
+    }
+
+    .hero {
+        padding: 30px 22px;
+    }
+
+    .hero h1 {
+        letter-spacing: -1px;
+    }
+
+    .hero::after {
+        font-size: 110px;
+    }
+
+    .section {
+        padding: 20px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-right {
+        text-align: left;
+    }
+}
+
+@media (max-width: 380px) {
+
+    .topbar {
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .badge {
+        font-size: 9px;
+        padding: 6px 9px;
+    }
+
+    .section-heading h2 {
+        font-size: 18px;
+    }
+
+    .choice-card {
+        padding: 10px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- TOP BAR -->
+
+    <div class="topbar">
+        <div class="brand">
+            STUDENT VOICE.
+            <span>CAMPUS FEEDBACK INITIATIVE</span>
+        </div>
+
+        <div class="badge">ACADEMIC SURVEY / 2026</div>
+    </div>
+
+    <!-- HERO -->
+
+    <header class="hero">
+
+        <div class="eyebrow">YOUR VOICE MATTERS — 2026</div>
+
+        <h1>
+            STUDENT VOICE.<br>
+            <span>CAMPUS VISION.</span>
+        </h1>
+
+        <p class="hero-description">
+            A student-led feedback initiative to understand campus
+            experiences, improve academic learning, and build a better
+            future for every student.
+        </p>
+
+        <div class="hero-bottom">
+            <div class="hero-tags">
+                ACADEMICS &nbsp; / &nbsp; CAMPUS &nbsp; / &nbsp;
+                TECHNOLOGY &nbsp; / &nbsp; CAREER
+            </div>
+
+            <div class="hero-number">SURVEY NO. 001</div>
+        </div>
+
+    </header>
+
+    <!-- PROGRESS -->
+
+    <div class="progress-card">
+
+        <div class="progress-info">
+            <span>SURVEY COMPLETION</span>
+            <span id="progressText">0% COMPLETE</span>
+        </div>
+
+        <div class="progress-track">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+    </div>
+
+    <form id="surveyForm">
+
+        <div class="success" id="successMessage"
+             role="status" aria-live="polite">
+
+            <h3>✓ Thank You for Your Feedback!</h3>
+
+            <p>
+                Your form has passed validation. This demonstration
+                does not save responses to a database.
+            </p>
+
+        </div>
+
+        <!-- SECTION 01 -->
+
+        <section class="section">
+
+            <div class="section-heading">
+                <div class="section-number">01</div>
+
+                <div>
+                    <h2>Student Profile</h2>
+                    <p>Let's start with a few basic details.</p>
+                </div>
+            </div>
+
+            <div class="form-grid">
+
+                <div class="field">
+                    <label for="name">Full Name *</label>
+
+                    <input type="text" id="name" name="name"
+                           placeholder="Enter your full name" required>
+                </div>
+
+                <div class="field">
+                    <label for="roll">University / College Roll Number *</label>
+
+                    <input type="text" id="roll" name="roll"
+                           placeholder="Enter your roll number" required>
+                </div>
+
+                <div class="field">
+                    <label for="course">Course *</label>
+
+                    <select id="course" name="course" required>
+                        <option value="">Choose your course</option>
+                        <option>B.Tech CSE</option>
+                        <option>B.Tech CSIT</option>
+                        <option>B.Tech AI & ML</option>
+                        <option>B.Tech IT</option>
+                        <option>MBA</option>
+                        <option>MCA</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="year">Current Academic Year *</label>
+
+                    <select id="year" name="year" required>
+                        <option value="">Choose your year</option>
+                        <option>1st Year</option>
+                        <option>2nd Year</option>
+                        <option>3rd Year</option>
+                        <option>4th Year</option>
+                    </select>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- SECTION 02 -->
+
+        <section class="section">
+
+            <div class="section-heading">
+                <div class="section-number">02</div>
+
+                <div>
+                    <h2>Academics & Learning</h2>
+                    <p>Tell us about your classroom and learning experience.</p>
+                </div>
+            </div>
+
+            <div class="question-block">
+
+                <p class="question">
+                    1. How would you rate the quality of teaching?
+                </p>
+
+                <div class="options">
+
+                    <label class="choice-card">
+                        <input type="radio" name="teaching"
+                               value="Excellent" required>
+                        Excellent
+                    </label>
+
+                    <label class="choice-card">
+                        <input type="radio" name="teaching" value="Good">
+                        Good
+                    </label>
+
+                    <label class="choice-card">
+                        <input type="radio" name="teaching" value="Average">
+                        Average
+                    </label>
+
+                    <label class="choice-card">
+                        <input type="radio" name="teaching"
+                               value="Below Average">
+                        Below Average
+                    </label>
+
+                    <label class="choice-card">
+                        <input type="radio" name="teaching" value="Poor">
+                        Poor
+                    </label>
+
+                </div>
+
+            </div>
+
+            <div class="question-block">
+
+                <p class="question">
+                    2. Which subjects do you find most challenging?
+                </p>
+
+                <p class="question-subtitle">
+                    Select all that apply.
+                </p>
+
+                <div class="options">
+
+                    <label class="choice-card">
+                        <input type="checkbox" name="challenging"
+                               value="Programming">
+                        Programming (C / Python)
+                    </label>
+
+                    <label class="choice-card">
+                        <input type="checkbox" name="challenging"
+                               value="Mathematics">
+                        Engineering Mathematics
+                    </label>
+
+                    <label class="choice-card">
+                        <input type="checkbox" name="challenging"
+                               value="Data Structures">
+                        Data Structures
+                    </label>
+
+                    <label class="choice-card">
+                        <input type="checkbox" name="challenging"
+                               value="Computer Architecture">
+                        Computer Architecture
+                    </label>
+
+                    <label class="choice-card">
+                        <input type="checkbox" name="challenging"
+                               value="Other">
+                        Other
+                    </label>
+
+                </div>
+
+            </div>
+
+            <div class="question-block">
+
+                <p class="question">
+                    3. Which learning method helps you understand concepts best?
+                </p>
+
+                <div class="options">
+
+                    <label class="choice-card">
+                        <input type="radio" name="learning"
+                               value="Classroom Teaching" required>
+                        Classroom Teaching
+                    </label>
+
+                    <label class="choice-card">
+                        <input type="radio" name="learning"
+                               value="Practical Sessions">
+                        Practical Sessions
+                    </label>
+
+                    <label class="choice-card">
+                        <input type="radio" name="learning"
+                               value="Online Tutorials">
+                        Online Tutorials
+                    </label>
+
+                    <label class="choice-card">
+                        <input type="radio" name="learning"
+                               value="Group Study">
+                        Group Study
+                    </label>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- SECTION 03 -->
+
+        <section class="section">
+
+            <div class="section-heading">
+                <div class="section-number">03</div>
+
+                <div>
+                    <h2>Campus & Infrastructure</h2>
+                    <p>Help us understand the facilities available to students.</p>
+                </div>
+            </div>
+
+            <div class="question-block">
+
+                <p class="question">
+                    1. How satisfied are you with the college infrastructure?
+                </p>
+
+                <div class="options">
+
+                    <label class="choice-card">
+                        <input type="radio" name="infrastructure"
+                               value="Very Satisfied" required>
+                        Very Satisfied
+                    </label>
+
+                    <label class="choice-card">
+                        <input type="radio" name="infrastructure"
+                               value="Satisfied">
+                        Satisfied
+                    </label>
+
+                    <label class="choice-card">
+                        <input type="radio" name="infrastructure"
+                               value="Neutral">
+                        Neutral
+                    </label>
+
+                    <label class="choice-card">
+                        <input type="radio" name="infrastructure"
+                               value="Dissatisfied">
+                        Dissatisfied
+                    </label>
+
+                </div>
+
+            </div>
+
+            <div class="question-block">
+
+                <p class="question">
+                    2. Which campus facilities need improvement?
+                </p>
+
+                <p class="question-subtitle">
+                    Choose up to three facilities.
+                </p>
+
+                <div class="options">
+
+                    <label class="choice-card">
+                        <input type="checkbox" name="facilities"
+                               value="Computer Labs">
+                        Computer Labs
+                    </label>
+
+                    <label class="choice-card">
+                        <input type="checkbox" name="facilities"
+                               value="Library">
+                        Library
+                    </label>
+
+                    <label class="choice-card">
+                        <input type="checkbox" name="facilities"
+                               value="Wi-Fi">
+                        Wi-Fi
+                    </label>
+
+                    <label class="choice-card">
+                        <input type="checkbox" name="facilities"
+                               value="Classrooms">
+                        Classrooms
+                    </label>
+
+                    <label class="choice-card">
+                        <input type="checkbox" name="facilities"
+                               value="Canteen">
+                        Canteen
+                    </label>
+
+                    <label class="choice-card">
+                        <input type="checkbox" name="facilities"
+                               value="Sports">
+                        Sports Facilities
+                    </label>
+
+                    <label class="choice-card">
+                        <input type="checkbox" name="facilities"
+                               value="Other">
+                        Other
+                    </label>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- SECTION 04 -->
+
+        <section class="section">
+
+            <div class="section-heading">
+                <div class="section-number">04</div>
+
+                <div>
+                    <h2>College Life & Opportunities</h2>
+                    <p>What would make your college journey more meaningful?</p>
+                </div>
+            </div>
+
+            <div class="question-block">
+
+                <p class="question">
+                    1. Are you satisfied with the extracurricular activities
+                    offered by your college?
+                </p>
+
+                <div class="options">
+
+                    <label class="choice-card">
+                        <input type="radio" name="activitiesSatisfaction"
+                               value="Yes" required>
+                        Yes
+                    </label>
+
+                    <label class="choice-card">
+                        <input type="radio" name="activitiesSatisfaction"
+                               value="Partially">
+                        Partially
+                    </label>
+
+                    <label class="choice-card">
+                        <input type="radio" name="activitiesSatisfaction"
+                               value="No">
+                        No
+                    </label>
+
+                </div>
+
+            </div>
+
+            <div class="question-block">
+
+                <p class="question">
+                    2. Which activities would you like to see more often?
+                </p>
+
+                <div class="options">
+
+                    <label class="choice-card">
+                        <input type="checkbox" name="events"
+                               value="Hackathons">
+                        Hackathons
+                    </label>
+
+                    <label class="choice-card">
+                        <input type="checkbox" name="events"
+                               value="Coding Competitions">
+                        Coding Competitions
+                    </label>
+
+                    <label class="choice-card">
+                        <input type="checkbox" name="events"
+                               value="Technical Workshops">
+                        Technical Workshops
+                    </label>
+
+                    <label class="choice-card">
+                        <input type="checkbox" name="events"
+                               value="Guest Lectures">
+                        Guest Lectures
+                    </label>
+
+                    <label class="choice-card">
+                        <input type="checkbox" name="events"
+                               value="Cultural Events">
+                        Cultural Events
+                    </label>
+
+                    <label class="choice-card">
+                        <input type="checkbox" name="events"
+                               value="Sports">
+                        Sports
+                    </label>
+
+                </div>
+
+            </div>
+
+            <div class="question-block">
+
+                <p class="question">
+                    3. Do you feel you receive sufficient career guidance?
+                </p>
+
+                <div class="options">
+
+                    <label class="choice-card">
+                        <input type="radio" name="guidance"
+                               value="Yes" required>
+                        Yes
+                    </label>
+
+                    <label class="choice-card">
+                        <input type="radio" name="guidance" value="No">
+                        No
+                    </label>
+
+                    <label class="choice-card">
+                        <input type="radio" name="guidance"
+                               value="Not Sure">
+                        Not Sure
+                    </label>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- SECTION 05 -->
+
+        <section class="section">
+
+            <div class="section-heading">
+                <div class="section-number">05</div>
+
+                <div>
+                    <h2>Future Goals & Technology</h2>
+                    <p>Explore your interests and professional ambitions.</p>
+                </div>
+            </div>
+
+            <div class="question-block">
+
+                <p class="question">
+                    1. What is your primary career goal?
+                </p>
+
+                <div class="options">
+
+                    <label class="choice-card">
+                        <input type="radio" name="goal"
+                               value="Higher Studies" required>
+                        Higher Studies
+                    </label>
+
+                    <label class="choice-card">
+                        <input type="radio" name="goal" value="Employment">
+                        Full-Time Job
+                    </label>
+
+                    <label class="choice-card">
+                        <input type="radio" name="goal" value="Entrepreneurship">
+                        Entrepreneurship
+                    </label>
+
+                    <label class="choice-card">
+                        <input type="radio" name="goal" value="Research">
+                        Research
+                    </label>
+
+                    <label class="choice-card">
+                        <input type="radio" name="goal" value="Undecided">
+                        Still Exploring
+                    </label>
+
+                </div>
+
+            </div>
+
+            <div class="question-block">
+
+                <p class="question">
+                    2. Which technology domain interests you the most?
+                </p>
+
+                <p class="question-subtitle">
+                    Select one domain to explore.
+                </p>
+
+                <div class="tech-grid">
+
+                    <label class="tech-card">
+                        <input type="radio" name="domain"
+                               value="AI and Machine Learning" required>
+
+                        <div class="tech-content">
+                            <span class="tech-symbol">AI</span>
+                            <strong>AI / ML</strong>
+                            <small>Intelligent Systems</small>
+                        </div>
+                    </label>
+
+                    <label class="tech-card">
+                        <input type="radio" name="domain"
+                               value="Data Analytics">
+
+                        <div class="tech-content">
+                            <span class="tech-symbol">DA</span>
+                            <strong>Data Analytics</strong>
+                            <small>Insights & Data</small>
+                        </div>
+                    </label>
+
+                    <label class="tech-card">
+                        <input type="radio" name="domain"
+                               value="Web Development">
+
+                        <div class="tech-content">
+                            <span class="tech-symbol">&lt;/&gt;</span>
+                            <strong>Web Development</strong>
+                            <small>Build Digital Products</small>
+                        </div>
+                    </label>
+
+                    <label class="tech-card">
+                        <input type="radio" name="domain"
+                               value="Cybersecurity">
+
+                        <div class="tech-content">
+                            <span class="tech-symbol">CS</span>
+                            <strong>Cybersecurity</strong>
+                            <small>Digital Protection</small>
+                        </div>
+                    </label>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- SECTION 06 -->
+
+        <section class="section">
+
+            <div class="section-heading">
+                <div class="section-number">06</div>
+
+                <div>
+                    <h2>Your Voice, Your Ideas</h2>
+                    <p>Every improvement starts with a suggestion.</p>
+                </div>
+            </div>
+
+            <div class="question-block">
+
+                <label for="suggestions" class="question">
+                    If you could change one thing about your college experience,
+                    what would it be?
+                </label>
+
+                <p class="question-subtitle">
+                    Share an idea, suggest an improvement, or describe a
+                    student need.
+                </p>
+
+                <textarea id="suggestions" name="suggestions"
+                    placeholder="My idea for a better campus is..."></textarea>
+
+            </div>
+
+        </section>
+
+        <!-- SUBMIT PANEL -->
+
+        <div class="submit-panel">
+
+            <h2>Make Your Voice Count.</h2>
+
+            <p>
+                Your feedback can help shape a better learning environment.
+            </p>
+
+            <button class="submit-button" type="submit">
+                SUBMIT YOUR RESPONSE &nbsp; →
+            </button>
+
+        </div>
+
+    </form>
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <div>
+            <h3>GL BAJAJ INSTITUTE OF TECHNOLOGY AND MANAGEMENT</h3>
+
+            <p>Student Feedback & Academic Improvement Initiative</p>
+
+            <p>Roll No.: 2505110120079</p>
+        </div>
+
+        <div class="footer-right">
+            <p>STUDENT VOICE. / 2026</p>
+            <p>LEARN. &nbsp; GROW. &nbsp; BUILD.</p>
+        </div>
+
+    </footer>
+
+</div>
+
+<script>
+
+const form = document.getElementById("surveyForm");
+const progressFill = document.getElementById("progressFill");
+const progressText = document.getElementById("progressText");
+const successMessage = document.getElementById("successMessage");
+
+// Update the progress bar as students answer questions.
+
+function updateProgress() {
+
+    const requiredGroups = [
+        "name",
+        "roll",
+        "course",
+        "year",
+        "teaching",
+        "learning",
+        "infrastructure",
+        "activitiesSatisfaction",
+        "guidance",
+        "goal",
+        "domain"
+    ];
+
+    let completed = 0;
+
+    requiredGroups.forEach(function (groupName) {
+
+        const firstElement = form.elements[groupName];
+
+        if (!firstElement) return;
+
+        if (firstElement instanceof RadioNodeList) {
+
+            if (firstElement.value.trim() !== "") {
+                completed++;
+            }
+
+        } else if (firstElement.value.trim() !== "") {
+
+            completed++;
+
+        }
+
+    });
+
+    const percentage = Math.round(
+        (completed / requiredGroups.length) * 100
+    );
+
+    progressFill.style.width = percentage + "%";
+    progressText.textContent = percentage + "% COMPLETE";
+}
+
+// Listen for changes throughout the form.
+
+form.addEventListener("input", updateProgress);
+form.addEventListener("change", updateProgress);
+
+// Limit facility choices to three.
+
+const facilities = document.querySelectorAll(
+    'input[name="facilities"]'
+);
+
+facilities.forEach(function (checkbox) {
+
+    checkbox.addEventListener("change", function () {
+
+        const selected = document.querySelectorAll(
+            'input[name="facilities"]:checked'
+        );
+
+        if (selected.length > 3) {
+
+            this.checked = false;
+
+            alert("Please select a maximum of three facilities.");
+
+        }
+
+    });
+
+});
+
+// Validate and demonstrate form submission.
+
+form.addEventListener("submit", function (event) {
+
+    event.preventDefault();
+
+    if (!form.checkValidity()) {
+
+        form.reportValidity();
+        return;
+
+    }
+
+    successMessage.style.display = "block";
+
+    successMessage.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+
+    successMessage.focus({ preventScroll: true });
+
+    form.reset();
+    updateProgress();
+
+});
+
+</script>
+
+</body>
+</html>
+```
