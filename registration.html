@@ -1,0 +1,395 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration - GL Bajaj Bookstore</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FFF0F5;
+    font-family: Georgia, serif;
+    margin: 0;
+    padding: 35px 15px;
+    color: #333;
+}
+
+.reg-box {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 4px 4px 20px rgba(216, 27, 96, 0.2);
+    padding: 30px 35px;
+    width: 100%;
+    max-width: 520px;
+    margin: auto;
+}
+
+.reg-icon {
+    width: 65px;
+    height: 65px;
+    background: #D81B60;
+    border-radius: 50%;
+    margin: 0 auto 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: white;
+}
+
+h1 {
+    color: #D81B60;
+    font-size: 28px;
+    text-align: center;
+    margin: 0 0 8px;
+}
+
+.tagline {
+    color: #999;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 25px;
+    font-style: italic;
+}
+
+.input-group {
+    margin-bottom: 16px;
+}
+
+label {
+    font-size: 15px;
+    color: #D81B60;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 6px;
+}
+
+input[type="text"],
+input[type="password"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1.5px solid #FFD1DC;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: Georgia, serif;
+    background: white;
+    color: #333;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #D81B60;
+}
+
+.dob-row {
+    display: flex;
+    gap: 8px;
+}
+
+.dob-row select {
+    min-width: 0;
+}
+
+.options-row {
+    font-size: 14px;
+    color: #555;
+}
+
+.options-row label {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: #555;
+    font-weight: normal;
+    margin: 4px 10px 4px 0;
+}
+
+.options-row input {
+    accent-color: #D81B60;
+}
+
+.reg-btn, .clear-btn {
+    width: 100%;
+    padding: 13px;
+    border-radius: 8px;
+    font-family: Georgia, serif;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.reg-btn {
+    background: #D81B60;
+    color: white;
+    border: none;
+    margin-top: 8px;
+    margin-bottom: 10px;
+}
+
+.reg-btn:hover {
+    background: #B0184F;
+}
+
+.clear-btn {
+    background: white;
+    color: #D81B60;
+    border: 1.5px solid #FFD1DC;
+}
+
+.clear-btn:hover {
+    background: #FFF0F5;
+}
+
+.login-link {
+    font-size: 14px;
+    color: #777;
+    text-align: center;
+    margin-top: 18px;
+}
+
+.login-link a {
+    color: #D81B60;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 400px) {
+    body {
+        padding: 18px 10px;
+    }
+
+    .reg-box {
+        padding: 25px 18px;
+    }
+
+    .dob-row {
+        gap: 4px;
+    }
+
+    .dob-row select {
+        padding: 9px 4px;
+        font-size: 12px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="reg-box">
+
+    <div class="reg-icon">&#128214;</div>
+
+    <h1>Join Our Bookstore</h1>
+
+    <p class="tagline">
+        Create an account and start your reading journey
+    </p>
+
+    <form name="regForm" id="regForm" novalidate>
+
+        <div class="input-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name"
+                   placeholder="Enter your full name">
+        </div>
+
+        <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password"
+                   placeholder="At least 6 characters">
+        </div>
+
+        <div class="input-group">
+            <label for="email">Email ID</label>
+            <input type="text" id="email" name="email"
+                   placeholder="example@gmail.com">
+        </div>
+
+        <div class="input-group">
+            <label for="phone">Phone Number</label>
+            <input type="text" id="phone" name="phone"
+                   placeholder="10-digit phone number"
+                   inputmode="numeric" maxlength="10">
+        </div>
+
+        <div class="input-group">
+            <label>Gender</label>
+
+            <div class="options-row">
+                <label>
+                    <input type="radio" name="sex" value="Male"> Male
+                </label>
+
+                <label>
+                    <input type="radio" name="sex" value="Female"> Female
+                </label>
+
+                <label>
+                    <input type="radio" name="sex" value="Other"> Other
+                </label>
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label>Date of Birth</label>
+
+            <div class="dob-row">
+                <select name="day" aria-label="Day">
+                    <option value="">Day</option>
+                </select>
+
+                <select name="month" aria-label="Month">
+                    <option value="">Month</option>
+                    <option>January</option>
+                    <option>February</option>
+                    <option>March</option>
+                    <option>April</option>
+                    <option>May</option>
+                    <option>June</option>
+                    <option>July</option>
+                    <option>August</option>
+                    <option>September</option>
+                    <option>October</option>
+                    <option>November</option>
+                    <option>December</option>
+                </select>
+
+                <select name="year" aria-label="Year">
+                    <option value="">Year</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label>Languages Known</label>
+
+            <div class="options-row">
+                <label>
+                    <input type="checkbox" name="lang" value="English">
+                    English
+                </label>
+
+                <label>
+                    <input type="checkbox" name="lang" value="Hindi">
+                    Hindi
+                </label>
+
+                <label>
+                    <input type="checkbox" name="lang" value="Telugu">
+                    Telugu
+                </label>
+
+                <label>
+                    <input type="checkbox" name="lang" value="Tamil">
+                    Tamil
+                </label>
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label for="address">Address</label>
+            <textarea id="address" name="address" rows="3"
+                      placeholder="Enter your address"></textarea>
+        </div>
+
+        <button type="submit" class="reg-btn">
+            Create Account
+        </button>
+
+        <button type="reset" class="clear-btn">
+            Clear Form
+        </button>
+
+    </form>
+
+    <p class="login-link">
+        Already have an account?
+        <a href="login.html" target="mainFrame">Login here</a>
+    </p>
+
+</div>
+
+<script>
+(function () {
+    const form = document.getElementById("regForm");
+    const daySelect = form.elements["day"];
+    const yearSelect = form.elements["year"];
+
+    // Populate days
+    for (let d = 1; d <= 31; d++) {
+        const option = document.createElement("option");
+        option.value = d;
+        option.textContent = String(d).padStart(2, "0");
+        daySelect.appendChild(option);
+    }
+
+    // Populate years
+    const currentYear = new Date().getFullYear();
+
+    for (let y = currentYear; y >= 1980; y--) {
+        const option = document.createElement("option");
+        option.value = y;
+        option.textContent = y;
+        yearSelect.appendChild(option);
+    }
+
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const name = form.elements["name"].value.trim();
+        const password = form.elements["password"].value;
+        const email = form.elements["email"].value.trim();
+        const phone = form.elements["phone"].value.trim();
+
+        // Experiment 6: Name validation
+        if (!/^[A-Za-z ]+$/.test(name) ||
+            name.replace(/ /g, "").length < 6) {
+
+            alert("Name must contain alphabets and be at least 6 characters long.");
+            form.elements["name"].focus();
+            return;
+        }
+
+        // Experiment 6: Password validation
+        if (password.length < 6) {
+            alert("Password must be at least 6 characters long.");
+            form.elements["password"].focus();
+            return;
+        }
+
+        // Experiment 7: Email validation
+        const emailPattern =
+            /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+
+        if (!emailPattern.test(email)) {
+            alert("Please enter a valid email address, for example name@domain.com.");
+            form.elements["email"].focus();
+            return;
+        }
+
+        // Experiment 7: Phone validation
+        if (!/^[0-9]{10}$/.test(phone)) {
+            alert("Phone number must contain exactly 10 digits.");
+            form.elements["phone"].focus();
+            return;
+        }
+
+        alert("Registration successful!");
+    });
+})();
+</script>
+
+</body>
+</html>
